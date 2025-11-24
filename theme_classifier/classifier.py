@@ -9,7 +9,7 @@ import pathlib
 import nltk
 
 nltk.download('punkt')
-nltk.download('punkt_tap')
+#nltk.download('punkt_tap')
 folder_path = pathlib.Path(__file__).parent.resolve()
 sys.path.append(os.path.join(folder_path, '../'))
 from utils import read_data
@@ -20,7 +20,7 @@ class ThemeClassifier():
         self.model_name = "facebook/bart-large-mnli"
         self.device = "cuda" if torch.cuda.is_available() else 'cpu'
         self.theme_list = theme_list
-        self.them_classifier = self.load_model()
+      
 
     def load_model(self):
         classifier = pipeline("zero-shot-classification",
@@ -29,6 +29,7 @@ class ThemeClassifier():
         return classifier
 
     def theme_classifier_inference(self, script):
+      self.them_classifier = self.load_model()
       script_batch = self._script_to_batches(script)
       return self._classify_batches(script_batch)
 

@@ -3,7 +3,7 @@ import pandas as pd
 
  
 def read_data(path):
-    paths = glob(path+'/*.ass')
+    paths = glob(path+'\*.ass')
     scripts = []
     eposide_names = []
     for path in paths:

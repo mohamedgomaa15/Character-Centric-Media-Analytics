@@ -3,3 +3,5 @@ torch>=1.7.0
 huggingface-hub>=0.0.12
 nltk>=3.5
 grdio
+spacy
+pyvis
