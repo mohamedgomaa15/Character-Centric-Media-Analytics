@@ -2,8 +2,9 @@ transformers>=4.0.0
 torch>=1.7.0
 huggingface-hub>=0.0.12
 nltk>=3.5
-grdio
-spacy
+grdio=>3.5.1
+spacy==3.5.3
 pyvis
 evaluate
 dotenv
+trl>=0.4.5
